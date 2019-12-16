@@ -4,9 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Serialization2"
+        xmlns:control="clr-namespace:Serialization2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Co zrobić?" Height="450" Width="800">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*" />
+            <ColumnDefinition Width=".5*" />
+            <!--<ColumnDefinition Width="200" />-->
+        </Grid.ColumnDefinitions>
+        <local:adding  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
+            <local:removing Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         
     </Grid>
 </Window>

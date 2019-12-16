@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Serialization2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for removing.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class removing : UserControl
     {
-        public MainWindow()
+        public removing()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

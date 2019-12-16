@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Serialization2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for adding.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class adding : UserControl
     {
-        public MainWindow()
+        public adding()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
