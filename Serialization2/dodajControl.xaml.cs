@@ -20,9 +20,10 @@ namespace Serialization2
     /// <summary>
     /// Interaction logic for usunControll.xaml
     /// </summary>
-    public partial class usunControl : UserControl
+    public partial class dodajControl : UserControl
     {
-        public usunControl()
+        private Boolean firstClick=true;
+        public dodajControl()
         {
             InitializeComponent();
         }
@@ -52,9 +53,9 @@ namespace Serialization2
             
         }
 
-        private void BUsun_Click(object sender, RoutedEventArgs e)
+        private void BDodaj_Click(object sender, RoutedEventArgs e)
         {
-           contentsLB.Items.Remove(contentsLB.SelectedItem);
+           contentsLB.Items.Add(xml.Text);
         }
 
         private void BZapisz_Click(object sender, RoutedEventArgs e)
@@ -72,6 +73,15 @@ namespace Serialization2
             try { xdoc.Save(sc); }
             catch (Exception ex) { Console.WriteLine(ex); }
                 
+        }
+
+        private void Xml_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if(firstClick)
+            {
+                xml.Text = "";
+                firstClick = false;
+            }
         }
     }
 }

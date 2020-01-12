@@ -12,8 +12,9 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        
-        <control:usunControl Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+        <control:usunControl Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <control:dodajControl Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <!--<control:usunControll Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>-->
 
     </Grid>
