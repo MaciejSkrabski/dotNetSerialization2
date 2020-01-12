@@ -29,6 +29,7 @@ namespace Serialization2
 
         private void BZaladuj_Click(object sender, RoutedEventArgs e)
         {
+            contentsLB.Items.Clear();
             String sc = @sciezka.Text;
             Boolean fe = File.Exists(sc);
 
@@ -59,20 +60,18 @@ namespace Serialization2
         private void BZapisz_Click(object sender, RoutedEventArgs e)
         {
             String sc = @sciezka.Text;
-            Boolean fe = File.Exists(sc);
-            if (fe)
+            StringBuilder sb = new StringBuilder();
+            foreach (string it in contentsLB.Items)
             {
-                StringBuilder sb = new StringBuilder();
-                foreach (string it in contentsLB.Items)
-                {
-                    sb.Append(it);
-                }
-            
-                string s = "<xml>" + sb.ToString() + "</xml>";
-                XmlDocument xdoc = new XmlDocument();
-                xdoc.LoadXml(s);
-                xdoc.Save(sc);
+                sb.Append("<User>"+it+"</User>");
             }
+            
+            string s = "<users>" + sb.ToString() + "</users>";
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.LoadXml(s);
+            try { xdoc.Save(sc); }
+            catch (Exception ex) { Console.WriteLine(ex); }
+                
         }
     }
 }

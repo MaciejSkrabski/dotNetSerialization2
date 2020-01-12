@@ -29,5 +29,10 @@ namespace Serialization2
         {
 
         }
+
+        private void UsunControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
