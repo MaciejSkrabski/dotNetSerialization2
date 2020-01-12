@@ -58,6 +58,9 @@
     <Compile Include="removing.xaml.cs">
       <DependentUpon>removing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="usunControll.xaml.cs">
+      <DependentUpon>usunControll.xaml</DependentUpon>
+    </Compile>
     <Page Include="adding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +81,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="removing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="usunControll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
