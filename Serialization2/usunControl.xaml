@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Serialization2.usunControll"
+﻿<UserControl x:Class="Serialization2.usunControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,18 +19,18 @@
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="sciezka" Grid.Column="0" Text="Ścieżka" />
+            <TextBox x:Name="sciezka" Grid.Column="0" Text="Users.xml" />
             <Button x:Name="bZaladuj" Grid.Column="1" Content="Załaduj" Click="BZaladuj_Click" />
         </Grid>
-        <ComboBox Grid.Row="1" x:Name="contentsCombo"/>
+        <ListBox Grid.Row="1" x:Name="contentsLB"/>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="bUsun" Grid.Column="0" Content="Usuń" />
-            <Button x:Name="bZapisz" Grid.Column="1" Content="Zapisz" />
+            <Button x:Name="bUsun" Grid.Column="0" Content="Usuń" Click="BUsun_Click" />
+            <Button x:Name="bZapisz" Grid.Column="1" Content="Zapisz" Click="BZapisz_Click" />
         </Grid>
     </Grid>
 </UserControl>
