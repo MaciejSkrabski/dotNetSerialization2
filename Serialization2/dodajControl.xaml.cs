@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.IO;
+using System.Xml;
+
+namespace Serialization2
+{
+    /// <summary>
+    /// Interaction logic for usunControll.xaml
+    /// </summary>
+    public partial class dodajControl : UserControl
+    {
+        private Boolean firstClick=true;
+        public dodajControl()
+        {
+            InitializeComponent();
+        }
+
+        private void BZaladuj_Click(object sender, RoutedEventArgs e)
+        {
+            contentsLB.Items.Clear();
+            String sc = @sciezka.Text;
+            Boolean fe = File.Exists(sc);
+
+            Console.WriteLine(fe ? "File exists." : "File does not exist.");
+            if(fe)
+            {
+                XmlDocument doc = new XmlDocument();
+                try {
+                    doc.Load(sc);
+                    XmlTextReader reader = new XmlTextReader(sc);
+                    foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+                    {
+                        string text = node.InnerXml; //or loop through its children as well
+                        contentsLB.Items.Add(text);
+                    }
+
+                }
+                catch (Exception err) { Console.WriteLine(err); }
+            }
+            
+        }
+
+        private void BDodaj_Click(object sender, RoutedEventArgs e)
+        {
+           contentsLB.Items.Add(xml.Text);
+        }
+
+        private void BZapisz_Click(object sender, RoutedEventArgs e)
+        {
+            String sc = @sciezka.Text;
+            StringBuilder sb = new StringBuilder();
+            foreach (string it in contentsLB.Items)
+            {
+                sb.Append("<User>"+it+"</User>");
+            }
+            
+            string s = "<users>" + sb.ToString() + "</users>";
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.LoadXml(s);
+            try { xdoc.Save(sc); }
+            catch (Exception ex) { Console.WriteLine(ex); }
+                
+        }
+
+        private void Xml_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if(firstClick)
+            {
+                xml.Text = "";
+                firstClick = false;
+            }
+        }
+    }
+}
